@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Média diária</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <p class="eyebrow">ACOMPANHAMENTO DE META</p>
+        <h1>Média diária</h1>
+        <p class="page-description">
+          Veja o ritmo necessário para alcançar seu objetivo neste mês.
+        </p>
+      </header>
+
+      <section class="calculator" aria-label="Calculadora de média diária">
+        <form>
+          <div class="field-group">
+            <label for="valor">Valor realizado</label>
+            <input
+              type="number"
+              placeholder="0"
+              name="valor"
+              id="valor"
+              min="0"
+              required
+            />
+          </div>
+          <div class="field-group">
+            <label for="meta">Meta do mês</label>
+            <input
+              type="number"
+              placeholder="0"
+              name="meta"
+              id="meta"
+              min="0"
+              required
+            />
+          </div>
+          <div class="field-group">
+            <label for="folga">Dias de folga restantes</label>
+            <input
+              type="number"
+              placeholder="0"
+              name="folga"
+              id="folga"
+              min="0"
+              step="1"
+              required
+            />
+          </div>
+          <button type="submit">
+            Calcular média <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div id="resultado" aria-live="polite">
+          <p class="result-label">SUA PROJEÇÃO</p>
+          <p id="media">Preencha os campos para ver sua média diária.</p>
+        </div>
+      </section>
+
+      <section class="calendar-section" aria-labelledby="calendar-heading">
+        <div class="calendar-header">
+          <div>
+            <p class="eyebrow">PLANEJAMENTO</p>
+            <h2 id="calendar-heading">Calendário do mês</h2>
+          </div>
+          <div class="calendar-navigation" aria-label="Navegação do calendário">
+            <button
+              class="month-nav"
+              id="previous-month"
+              type="button"
+              aria-label="Mês anterior"
+            >
+              ‹
+            </button>
+            <p id="month-label" aria-live="polite"></p>
+            <button
+              class="month-nav"
+              id="next-month"
+              type="button"
+              aria-label="Próximo mês"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+        <div
+          class="calendar-grid"
+          id="calendar"
+          role="grid"
+          aria-label="Dias do mês"
+        ></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
